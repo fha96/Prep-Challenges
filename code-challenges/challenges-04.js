@@ -33,17 +33,42 @@ const runningSumOfArray = (arr) => {
 // Output: nums = [0,1,3,0,4,_,_,_]
 const removeElementFromArray = (arr, value) => {
   // write your code here
+  // let x=0;
+  // for(let i=0;i<arr.length;i++){
+  //   if(arr[i]===value && i<arr.length-1){
+  //     arr[i]=arr[i+1];
+  //     x++;
+  //   }
+  // }
+  // let arrLength=arr.length;
+  // while(x>0){
+  //   arr[arrLength-1] = "_";
+  //   x--;
+  // }
+  let tempArray=[];
+  let tempArray2=[];
   let x=0;
+  let y=0;
+  let z=1;
+  
   for(let i=0;i<arr.length;i++){
-    if(arr[i]===value && i<arr.length-1){
-      arr[i]=arr[i+1];
+  
+    if(arr[i]!==value){
+      tempArray[x]=arr[i];
       x++;
+    }else{
+      tempArray2[y]="_";
+      y++;
     }
   }
-  let arrLength=arr.length;
-  while(x>0){
-    arr[arrLength-1] = "_";
-    x--;
+
+  for(let j=0 ; j<tempArray.length;j++){
+    arr[j]=tempArray[j];
+  }
+
+  for(let q=0;q<tempArray2.length;q++){
+    arr[arr.length-z]=tempArray2[q];
+    z++;
   }
   return arr;
 };
