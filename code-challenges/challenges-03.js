@@ -62,20 +62,20 @@
 const cvFormatter = (arr) => {
   // write your code here
   let newArray=[];
-  let temObj={};
+  let temObject={};
   for(let i=0;i<arr.length;i++){
     switch(arr[i]["yearsOfExperience"] >1){
       case true:
         if(arr[i]["lastName"] !==null){
-          temObj={fullName: arr[i]["firstName"]+" "+arr[i]["lastName"],
+          temObject={fullName: arr[i]["firstName"]+" "+arr[i]["lastName"],
           tech: arr[i]["tech"]
         };
         newArray[i]=temObj;
         }else {
-          temObj={fullName: arr[i]["firstName"],
+          temObject={fullName: arr[i]["firstName"],
           tech: arr[i]["tech"]
         };
-        newArray[i]=temObj;
+        newArray[i]=temObject;
         }
         break;
     }
